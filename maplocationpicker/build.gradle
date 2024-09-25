@@ -35,3 +35,17 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.shivpujan12'
+            artifactId = 'LocationPicker'
+            version = '2.1'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}
